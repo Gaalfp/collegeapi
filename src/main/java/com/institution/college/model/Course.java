@@ -26,7 +26,8 @@ public class Course {
     @Column(name = "name", nullable = false)
     private String name;
 
-
+    @ManyToMany
+    @JoinColumn(name = "subject_id")
     private List<Subject> subjects;
 
 
