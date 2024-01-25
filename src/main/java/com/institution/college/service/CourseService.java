@@ -11,7 +11,7 @@ public class CourseService {
     @Autowired
     private CourseRepository courseRepository;
 
-    private void saveCourse(Course course) {
-        courseRepository.save(course);
+    private Course saveCourse(Course course) {
+        return courseRepository.save(course);
     }
 }

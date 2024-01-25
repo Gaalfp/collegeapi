@@ -19,14 +19,14 @@ public class Student {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "ra")
-    private String ra;
+    private Long ra;
 
     @Column(name = "name")
     private String name;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "birthdate")
-    private Date birthDate;
+    private String birthDate;
 
     @Column(name = "cpf")
     private String cpf;
