@@ -1,0 +1,39 @@
+package com.institution.college.model;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.Date;
+
+@Entity
+@Table(name = "student")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Student {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private String ra;
+
+    @Column(name = "name")
+    private String name;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "birthdate")
+    private Date birthDate;
+
+    @Column(name = "cpf")
+    private String cpf;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
+
+    @Column(name = "semester")
+    private Integer semester;
+}
