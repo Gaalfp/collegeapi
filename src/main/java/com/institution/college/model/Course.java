@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -23,11 +22,13 @@ public class Course {
     @Column(name = "course_id", nullable = false)
     private Long id;
 
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "description", nullable = false)
+    private String description;
 
-    @ManyToMany
-    @JoinColumn(name = "subject_id")
+    @Column(name = "area", nullable = false)
+    private String area;
+
+    @ManyToMany(mappedBy = "courses", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Subject> subjects;
 
 
