@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "3954aa9f-ff66-4116-a624-7ef619b39c3d",
+		"name": "CollegeAPI_V1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32556806"
+	},
+	"item": [
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Letras\",\r\n    \"area\": \"Humanas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/course/add"
+					},
+					"response": []
+				},
+				{
+					"name": "GetByDescription",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/course/getbydescription?description=História",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								"getbydescription"
+							],
+							"query": [
+								{
+									"key": "description",
+									"value": "História"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByArea",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/course/getbyarea?area=Tecnologia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								"getbyarea"
+							],
+							"query": [
+								{
+									"key": "area",
+									"value": "Tecnologia"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Rodrigo Pinto\",\r\n  \"birthDate\": \"24/11/1980\",\r\n  \"cpf\": \"12379635\",\r\n  \"course\": \"Sistemas de informação\",\r\n  \"semester\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/student/add"
+					},
+					"response": []
+				},
+				{
+					"name": "GetByRA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/student/getbyra?ra=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"getbyra"
+							],
+							"query": [
+								{
+									"key": "ra",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteByRA",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/student/deletebyra?ra=102",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"deletebyra"
+							],
+							"query": [
+								{
+									"key": "ra",
+									"value": "102"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ra\": \"1\",\r\n    \"name\": \"Gabriel Pinto\",\r\n    \"birthDate\": \"24/11/2003\",\r\n    \"cpf\": \"12345789\",\r\n    \"course\": \"Sistemas de informação\",\r\n    \"semester\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/student/update"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
