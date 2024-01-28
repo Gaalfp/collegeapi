@@ -1,8 +1,9 @@
 spring:
   datasource:
+    # Insert your MySQL connection details
     url: jdbc:mysql://localhost:3306/school?createDatabaseIfNotExist=true
     username: root
-    password: 241103
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

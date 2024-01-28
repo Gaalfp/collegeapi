@@ -5,10 +5,14 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+
 
 @Repository
 public interface StudentRepository extends CrudRepository<Student, String> {
 
+    boolean existsByCpf(@NonNull String cpf);
 
+    Student findByRa(Long ra);
+
+    void deleteByRa(Long ra);
 }

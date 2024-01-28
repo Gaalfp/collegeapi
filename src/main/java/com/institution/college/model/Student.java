@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
-
 @Entity
 @Table(name = "student")
 @Getter
@@ -21,20 +19,20 @@ public class Student {
     @Column(name = "ra")
     private Long ra;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "birthdate")
+    @Column(name = "birthdate", nullable = false)
     private String birthDate;
 
-    @Column(name = "cpf")
+    @Column(name = "cpf", nullable = false)
     private String cpf;
 
     @ManyToOne
-    @JoinColumn(name = "course_id")
+    @JoinColumn(name = "course_id", nullable = false)
     private Course course;
 
-    @Column(name = "semester")
+    @Column(name = "semester", nullable = false)
     private Integer semester;
 }
