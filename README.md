@@ -1,4 +1,4 @@
-# College API
+# College API :open_book:
 
 A REST API for a college to register courses and students. 
 Studying CRUDs
